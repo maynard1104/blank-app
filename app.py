@@ -26,7 +26,7 @@ def main():
     st.title("Online Video Viewer")
     
     # URL input
-    url = st.text_input("Enter YouTube URL:")
+    url = st.text_input("https://www.youtube.com/watch?v=78yi4QbzYRs")
     
     if st.button("Load Video") and url:
         video_path, video_title = download_video(url)
