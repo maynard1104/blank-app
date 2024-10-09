@@ -2,6 +2,11 @@ import streamlit as st
 import streamlit.components.v1 as components
 from pytube import YouTube
 import time
+import ssl
+import certifi
+
+# SSL Context fix
+ssl._create_default_https_context = ssl._create_unverified_context
 
 def create_autoplay_html(video_id, muted=True):
     return f"""
@@ -30,7 +35,7 @@ def main():
     
     with col1:
         url = st.text_input("Enter YouTube URL:")
-        num_instances = st.number_input("Number of instances to open", min_value=1, max_value=6, value=2)
+        num_instances = st.number_input("Number of instances to open", min_value=1, max_value=20, value=2)
     
     with col2:
         duration = st.number_input("Viewing duration (minutes)", min_value=1, max_value=60, value=5)
