@@ -1,4 +1,2 @@
 streamlit
 pytube
-opencv-python-headless
-pafy
